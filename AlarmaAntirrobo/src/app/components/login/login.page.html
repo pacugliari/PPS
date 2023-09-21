@@ -1,0 +1,130 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:100italic' rel='stylesheet' type='text/css'>
+
+<ion-header style="background-color: #eb445a">
+  <h1 style="text-align: center;  margin-top: 10px; color: white;">ALARMA ANTIRROBO</h1>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding class="background" >
+
+
+ 
+ 
+ 
+  <form [formGroup]="userForm" style="margin-top: 15%;">
+    <ion-list class="list" style="margin-left: 10%;">
+      <ion-item style="width: 80%;">
+        <ion-input formControlName="email" type="text" placeholder="Correo" formControlName="email"
+        [class]="isValidField('email')" ></ion-input>
+      </ion-item>
+  
+
+      <br>
+      <ion-item style="width: 80%;">
+        <ion-input formControlName="password" type="password" placeholder="Clave" formControlName="password"
+        [class]="isValidField('password')" ></ion-input>
+      </ion-item>
+
+
+
+    <br>
+    <br>
+    <ion-button color="danger" class="btnLogin" style="width: 80%;" [disabled]="!userForm.valid" type="submit" expand="block" shape="round"
+      (click)="onLogin()">Entrar</ion-button>
+
+    </ion-list>
+    <br>
+    <ion-fab vertical="bottom" horizontal="left" slot="fixed" style="margin-bottom: 15%;margin-left: 2%;">
+      <ion-fab-button color="danger" >
+        <ion-icon style="color: white;" name="albums-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="end">
+        <ion-fab-button color="danger" title="Admin" (click)="selecCuenta('admin@admin.com')"><ion-icon name="person-outline"></ion-icon></ion-fab-button>
+        <ion-fab-button color="danger" (click)="selecCuenta('invitado@invitado.com')"><ion-icon name="person"></ion-icon></ion-fab-button>
+        <ion-fab-button color="danger" (click)="selecCuenta('usuario@usuario.com')"><ion-icon name="person-outline"></ion-icon></ion-fab-button>
+        <ion-fab-button color="danger" (click)="selecCuenta('anonimo@anonimo.com')"><ion-icon name="person"></ion-icon></ion-fab-button>
+        <ion-fab-button color="danger" (click)="selecCuenta('tester@tester.com')"><ion-icon name="person-outline"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  
+  </form>
+</ion-content>
+<!--<ion-header style="background-color: skyblue">
+  <h1 style="text-align: center;  margin-top: 10px;">Tabla didactica</h1>
+</ion-header>
+
+<ion-content  padding class="background">
+  <div class="login card">
+    <p class="aligncenter"></p>
+    <div class="card-body">
+      <form novalidate (ngSubmit)="onLogin()" [formGroup]="userForm">
+        <fieldset>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Correo</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Correo Electronico"
+              formControlName="email"
+              [class]="isValidField('email')"
+            />
+            <div class="invalid-feedback" style="font-family: sans-serif;">
+              <span *ngIf="userForm.get('email')?.errors?.['required']">
+                Por Favor Ingrese su Correo
+              </span>
+              <span *ngIf="userForm.get('email')?.errors?.['pattern']">
+                Ingrese un Correo Valido   
+                Ejemplo: 'Correo@correo.com'
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Contraseña"
+              formControlName="password"
+              [class]="isValidField('password')"
+            />
+            <div class="invalid-feedback" style="font-family: sans-serif;">
+              <span *ngIf="userForm.get('password')?.errors?.['required']">
+                Por Favor ingrese una Contraseña
+              </span>
+              <span *ngIf="userForm.get('password')?.errors?.['minlength']">
+                La contraseña debe tener mas de 5 caracteres
+              </span>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-dark btn-block "
+            [disabled]="userForm.invalid"
+          >
+            Ingresar
+          </button>
+          <div class="btn-group btn-block">
+          <button
+            type="button"
+            class="btn btn-dark "
+            data-toggle="dropdown" 
+          >
+            Inicio Rápido
+          </button>
+          <div class="dropdown-menu bg-dark btn-block" id="drop1">
+            <div class="container" >
+            <button type="button" class="button-with-border btn-block" style="width: 90%;" (click)="LoginAdmin()">Admin</button>
+            <button type="button" class="button-with-border  btn-block" style="width: 90%;" (click)="LoginInvitado()">Invitado</button>
+            <button type="button" class="button-with-border  btn-block" style="width: 90%;" (click)="LoginUsuario()">Usuario</button>
+            <button type="button" class="button-with-border  btn-block" style="width: 90%;" (click)="LoginAnonimo()">Anonimo</button>
+            <button type="button" class="button-with-border  btn-block" style="width: 90%;" (click)="LoginTester ()">Tester</button>
+          </div>
+          </div>
+        </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</ion-content>-->

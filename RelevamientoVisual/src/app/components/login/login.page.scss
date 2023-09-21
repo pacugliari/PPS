@@ -1,0 +1,112 @@
+.tituloLogin {
+  overflow: hidden;
+}
+
+ion-header {
+  color: white;
+}
+
+.login {
+  width: 20rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.card{
+    background-color: rgb(177, 174, 174);
+    border-radius: 15px;
+    border: none;
+    color: black;
+}
+.ion-header{
+    border: none;
+}
+
+
+#msjError {
+  display: none;
+}
+#drop1{
+  border-radius: 20px;
+}
+.msjError{
+    text-align: center;
+    background-color: #ffffff00;
+    color: orange;
+    width: 15rem;
+
+    font-size: large;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+
+.background {
+  --background: url("../../../assets/fondo.png")center center fixed no-repeat;
+  background-size: contain;
+  @media only screen and (max-height: 800px) {
+      --background: url("../../../assets/fondo.png")center center fixed no-repeat;
+  background-size: contain;
+    }
+}
+
+/* Estilos del botón con borde */
+.button-with-border {
+  border: 2px solid white; /* Color del borde (en este caso, rojo) */
+  background-color: transparent; /* Fondo transparente */
+  color: white; /* Color del texto igual al del borde */
+  padding: 10px 20px; /* Espaciado interno */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px; /* Bordes redondeados */
+}
+/* Estilo del botón al pasar el ratón por encima */
+.button-with-border:hover {
+  background-color: #ff5733; /* Cambio de color de fondo al pasar el ratón por encima */
+  color: white; /* Cambio de color del texto al pasar el ratón por encima */
+}
+
+.button {
+  background-color: #c47135;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+}
+.button:before,
+.button:after {
+  border: 0 solid transparent;
+  transition: all 0.25s;
+  content: '';
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.button:before {
+  border-top: 2px solid #c47135;
+  left: 0px;
+  top: -5px;
+}
+.button:after {
+  border-bottom: 2px solid #c47135;
+  bottom: -5px;
+  right: 0px;
+}
+.button:hover {
+  background-color: #c47135;
+}
+.button:hover:before,
+.button:hover:after {
+  height: 100%;
+  width: 100%;
+}
+

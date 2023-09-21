@@ -1,0 +1,7 @@
+{
+  "name": "Alarma Antirrobo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
