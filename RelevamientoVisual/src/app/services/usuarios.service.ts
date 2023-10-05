@@ -33,6 +33,11 @@ export class UsuariosService {
     return flag;
   }
 
+  async logout(){
+    localStorage.removeItem("user");
+    this.router.navigate(['login'], { replaceUrl: true });
+  }
+
 
 
 }

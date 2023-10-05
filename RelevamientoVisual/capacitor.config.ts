@@ -5,10 +5,12 @@ const config: CapacitorConfig = {
   appName: 'Relevamiento Visual',
   webDir: 'www',
   server: {
-    androidScheme: 'https'
+    url: "http://192.168.1.36:8100",
+    cleartext: true
   },
   plugins: {
   },
 };
 
 export default config;
+//    androidScheme: 'https',

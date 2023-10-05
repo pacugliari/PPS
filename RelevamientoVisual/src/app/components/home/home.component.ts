@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent  implements OnInit {
 
-  constructor(private router:Router) { }
+  /*constructor(private router:Router) { }
 
   ngOnInit() {
     if(localStorage.getItem("user") === null){
@@ -19,5 +19,20 @@ export class HomeComponent  implements OnInit {
   async logout(){
     localStorage.removeItem("user");
     this.router.navigate(['login'], { replaceUrl: true });
+  }*/
+  constructor(private router:Router) {}
+  
+  ngOnInit(): void {
   }
+
+  cosasLindas(){
+    localStorage.setItem('lindo','true');
+    this.router.navigateByUrl('/cosasLindas')
+  }
+
+  cosasFeas(){
+    localStorage.setItem('lindo','false');
+    this.router.navigateByUrl('/cosasFeas')
+  }
+
 }

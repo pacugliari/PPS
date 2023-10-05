@@ -14,20 +14,23 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip'; 
 import { MatIconModule } from '@angular/material/icon';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore} from '@angular/fire/firestore';
 import { HomeComponent } from './components/home/home.component';
 import { SplashAnimadoPage } from './components/splash-animado/splash-animado.page';
 import { LoginPage } from './components/login/login.page';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { GaleriaPage } from './components/galeria/galeria.page';
+import { getApp, initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SplashAnimadoPage,
-    LoginPage
+    LoginPage,
+    GaleriaPage
   ],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 
@@ -46,7 +49,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     ReactiveFormsModule,
     SweetAlert2Module,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
+    provideFirestore(() => getFirestore(getApp())),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

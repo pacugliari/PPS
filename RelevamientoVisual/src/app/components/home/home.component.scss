@@ -1,52 +1,69 @@
-ion-header {
-    ion-toolbar {
-      --background: rgb(177, 174, 174); /* Color de fondo del encabezado */
-      color: white; /* Color del texto del encabezado */
-    }
-  }
-  
-  ion-content {
-    --ion-background-color: #19202e; /* Color de fondo del contenido */
-  
-    .login-container {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh; /* Ajusta la altura como desees */
-    }
-  
-    ion-item {
-      margin-bottom: 15px;
-    }
-  
-    ion-button {
-      --background: rgb(177, 174, 174); /* Color de fondo del botón */
-      --color: white; /* Color del texto del botón */
-      margin-top: 15px;
-    }
-  
-    .text-center {
-      text-align: center;
-    }
+ion-button {
+  color: white;
+  font-weight: bolder;
+  font-size: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000,
+    0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000,
+    -1px 1px 0 #000000;
+}
 
-    
-    ion-input {
-      --color: white; /* Color del texto */
-      --border-color: white; /* Color de la línea inferior */
-      --highlight-color-focused: white; /* Color de la línea inferior al enfocar */
-    }
-    
-    ion-item{
-      --highlight-color-focused: white; /* Color de la línea inferior al enfocar */
-      --border-color: white !important; /* Color de la línea inferior */
-    }
+h2{
+  text-shadow: -1px 0 black, 0 2px black, -1px 0 black, 0 -1px black;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 300%;
+  margin-bottom: -80%;
+}
 
-    p{
-      color: white;
-    }
-    a{
-      color: orange;
-    }
-  }
+ion-grid {
+  height: 100%;
+  margin: 0 !important;
+  padding: 0;
+}
+
+ion-row {
+  height: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+ion-col {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.botonLindo {
+  border-radius: 2px;
+  border: solid rgb(0, 0, 0) 5px;
+    background-image: url("../../../assets/img/cosaslindas/cosalinda3.jpg");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(4, 255, 4);
+}
+
+.botonFeo {
+  background-image: url("../../../assets/img/cosasfeas/cosafea4.jpg");
+    border-radius: 2px;
+    border: solid rgb(0, 0, 0) 5px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: red
+    
+}
+
+/* Estilo para los emojis dentro de los botones */
+.emoji {
+  font-size: 24px; /* Tamaño de fuente del emoji */
+  margin-left: 5px; /* Espacio a la izquierda del emoji */
+  /* Agrega otros estilos según tus preferencias */
+}
+
+
+

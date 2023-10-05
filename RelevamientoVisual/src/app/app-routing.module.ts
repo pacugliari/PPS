@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginPage } from './components/login/login.page';
 import { SplashAnimadoPage } from './components/splash-animado/splash-animado.page';
+import { GaleriaPage } from './components/galeria/galeria.page';
 
 const routes: Routes = [
   {
@@ -18,6 +19,12 @@ const routes: Routes = [
   },
   {
     path: 'home',component:HomeComponent
+  },
+  {
+    path: 'cosasLindas',component:GaleriaPage
+  },
+  {
+    path: 'cosasFeas',component:GaleriaPage
   },
 ];
 
