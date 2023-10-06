@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { PhotoService } from '../../services/photo.service';
 import { UsuariosService } from '../../services/usuarios.service';
 import { Usuario } from '../../models/usuario';
+import { Imagen } from 'src/app/models/imagen';
 
 
 @Component({
@@ -24,20 +25,23 @@ export class GaleriaPage implements OnInit {
       this.title = 'Cosas FEAS del edificio';
       this.verFotosLindas = false
     }
-    this.photoService.ObtenerTodos().then((resultado) => {
+    /*this.photoService.ObtenerTodos().then((resultado) => {
       this.imagenesRT = resultado.reverse();
       console.log(this.imagenesRT)
-    });
+    });*/
   }
 
   ngOnInit() {
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.imagenesRT?.reverse()
-    }, 1550);
+    }, 1550);*/
+    this.photoService.listenToChatChanges();
 
   }
 
-  doRefresh(event:any) {
+
+
+  /*doRefresh(event:any) {
     setTimeout(() => {
         this.imagenesRT?.splice(0, this.imagenesRT?.length)
         this.photoService.ObtenerTodos().then((resultado) => {
@@ -45,13 +49,17 @@ export class GaleriaPage implements OnInit {
         });
         event.target.complete();
       }, 1000);
-  }
+  }*/
 
    addPhotoToGallery() {
     this.photoService.sacarFoto().then((val) => {
       this.flag = true
-      this.doRefresh(true);
+      //this.doRefresh(true);
     });
+  }
+
+  trackById(index: number, photo: any): string {
+    return photo.id; // Supongamos que tienes un campo "id" en cada elemento
   }
 
   public setLike(unaFoto:any) {
@@ -85,5 +93,14 @@ export class GaleriaPage implements OnInit {
 
       this.photoService.modificarFoto(unaFoto, unaFoto.id)
     }
+  }
+
+  graficos(){
+    if(this.verFotosLindas){
+      this.router.navigate(["graficoTorta"])
+    }else{
+      this.router.navigate(["graficoBarras"])
+    }
+
   }
 }

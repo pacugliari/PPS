@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginPage } from './components/login/login.page';
 import { SplashAnimadoPage } from './components/splash-animado/splash-animado.page';
 import { GaleriaPage } from './components/galeria/galeria.page';
+import { GraficoBarrasComponent } from './components/grafico-barras/grafico-barras.component';
+import { GraficoTortaComponent } from './components/grafico-torta/grafico-torta.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,12 @@ const routes: Routes = [
   },
   {
     path: 'cosasFeas',component:GaleriaPage
+  },
+  {
+    path: 'graficoBarras',component:GraficoBarrasComponent
+  },
+  {
+    path: 'graficoTorta',component:GraficoTortaComponent
   },
 ];
 

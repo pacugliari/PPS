@@ -13,48 +13,55 @@
 
 </ion-header>
 
-<ion-content [fullscreen]="true" padding class="background">
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content >
-  </ion-refresher>
-
-  <ion-grid *ngFor="let photo of imagenesRT; index as position" class="background">
-    <div *ngIf="verFotosLindas===true" >
-      <ion-card *ngIf='photo.esLinda==="true"' color="warning">
-        <ion-card-header>
-          <ion-card-subtitle>Usuario: {{photo.usuario}}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-item>
+<ion-content [fullscreen]="true" padding>
+  <div  style="background-color: #2f3135;min-height: 100vh;">
+    <ion-grid *ngFor="let photo of photoService.getFotos(); index as position,trackBy: trackById">
+      <div *ngIf="verFotosLindas===true" >
+        <ion-card *ngIf='photo.esLinda==="true"' color="warning">
+          <ion-card-header>
+            <ion-card-subtitle>Usuario: {{photo.usuario}}</ion-card-subtitle>
+          </ion-card-header>
+            <ion-img [src]="photo.referencia" class="img"></ion-img>
+          <div class="row">
+            <ion-card-content style="font-size: large;font-weight: bolder;margin-left: 5%;width: 50%;">
+              Votos:{{photo.votos}}
+            </ion-card-content>
+            <ion-icon name="thumbs-up" size="large" style="margin-left: 30%;margin-top: 2%;" (click)="setLike(photo)"></ion-icon>
+          </div>
+        </ion-card>
+      </div>
+  
+      <div *ngIf="verFotosLindas===false">
+        <ion-card *ngIf='photo.esLinda==="false"' color="warning">
+          <ion-card-header>
+            <ion-card-subtitle>Usuario: {{photo.usuario}}</ion-card-subtitle>
+          </ion-card-header>
           <ion-img [src]="photo.referencia"></ion-img>
-        </ion-item>
-        <div class="row">
-          <ion-card-content style="font-size: large;font-weight: bolder;margin-left: 5%;width: 50%;">
-            Votos:{{photo.votos}}
-          </ion-card-content>
-          <ion-icon name="thumbs-up" size="large" style="margin-left: 30%;margin-top: 2%;" (click)="setLike(photo)"></ion-icon>
-        </div>
-
-        
-      </ion-card>
-    </div>
-  </ion-grid>
-
-
+          <div class="row">
+            <ion-card-content style="font-size: large;font-weight: bolder;margin-left: 5%;width: 50%;">
+              Votos:{{photo.votos}}
+            </ion-card-content>
+            <ion-icon name="thumbs-up" size="large" style="margin-left: 30%;margin-top: 2%;" (click)="setLike(photo)"></ion-icon>
+          </div>
+        </ion-card>
+      </div>
+    </ion-grid>
+  </div>
 </ion-content>
 
 
 <ion-toolbar color="dark" >
-    <ion-buttons slot="start" routerLink='../misfotos'>
-      <ion-icon style="font-size: 300%;" name="image"></ion-icon>
-    </ion-buttons>
-
-    <ion-buttons style="margin-left: 45%;" (click)="photoService.sacarFoto()" color="warning">
-      <ion-icon style="font-size: 300%;" name="camera"></ion-icon>
-    </ion-buttons>
-
-  <ion-buttons slot="end"(click)="usuarioSrv.logout()">
-    <ion-icon style="font-size: 300%;" name="exit"> </ion-icon>
+  <ion-buttons slot="start" (click)="graficos()">
+    <ion-icon style="font-size: 300%;" name="bar-chart"></ion-icon>
   </ion-buttons>
+
+  <ion-buttons style="margin-left: 45%;" (click)="photoService.sacarFoto()" color="warning">
+    <ion-icon style="font-size: 300%;" name="camera"></ion-icon>
+  </ion-buttons>
+
+<ion-buttons slot="end"(click)="usuarioSrv.logout()">
+  <ion-icon style="font-size: 300%;" name="exit"> </ion-icon>
+</ion-buttons>
 
 </ion-toolbar>
 

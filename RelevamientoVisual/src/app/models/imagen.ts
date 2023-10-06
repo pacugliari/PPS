@@ -5,4 +5,5 @@ export class Imagen {
     votos ?:number; 
     referencia?: string;
     like?:string[];
+    fecha ?: string;
 }

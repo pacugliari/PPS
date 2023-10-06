@@ -22,6 +22,8 @@ import { GaleriaPage } from './components/galeria/galeria.page';
 import { getApp, initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { GraficoBarrasComponent } from './components/grafico-barras/grafico-barras.component';
+import { GraficoTortaComponent } from './components/grafico-torta/grafico-torta.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     HomeComponent,
     SplashAnimadoPage,
     LoginPage,
-    GaleriaPage
+    GaleriaPage,
+    GraficoBarrasComponent,
+    GraficoTortaComponent
   ],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 

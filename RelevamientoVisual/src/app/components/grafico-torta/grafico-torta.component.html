@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <div class="row">
+      <div class="col text-left">
+        <ion-title>Graficos</ion-title>
+      </div>
+    </div>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+  <div  style="background-color: #2f3135;min-height: 100vh;">
+    <div class="container pt-5">
+      <div class="row pt-5">
+        <div class="col pt-5">
+          <canvas #canvas width="300" height="300">{{chart}}</canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

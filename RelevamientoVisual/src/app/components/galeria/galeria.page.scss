@@ -2,3 +2,10 @@
     color: #19202e;
     background-color: #19202e;
 }
+
+.img {
+    --background: center center fixed no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+  }
