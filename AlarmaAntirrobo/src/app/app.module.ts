@@ -22,6 +22,12 @@ import { SplashAnimadoPage } from './components/splash-animado/splash-animado.pa
 import { LoginPage } from './components/login/login.page';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
+//Agregarr En App.module.ts (PROVIDER)
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { DeviceMotion } from '@ionic-native/device-motion/ngx';
+import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +54,13 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    ScreenOrientation,
+    DeviceMotion,
+    Flashlight,
+    Vibration,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

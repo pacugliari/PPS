@@ -1,13 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content scroll-y="false">
-  <div class="login-container" style="justify-content: center;">
+  <ion-content [fullscreen]="true" class="background">
+    <button *ngIf="presionado" class="fullscreen-button" (click)="btnActivarODesactivar()" style="background-color: #72a6be;color: #eb445a;">
+      <ion-icon name="pause"></ion-icon>
+    </button>
 
-    <ion-button style="margin-top: 50%; width: 80%;" (click)="logout()" >Salir</ion-button>
-  
-  </div>
-</ion-content>
+    <button *ngIf="!presionado" class="fullscreen-button" (click)="btnActivarODesactivar()" style="background-color: #72a6be;color: #eb445a;">
+      <ion-icon  name="play-circle"></ion-icon>
+    </button>
+
+  </ion-content>

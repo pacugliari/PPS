@@ -6,6 +6,8 @@ const config: CapacitorConfig = {
   webDir: 'www',
   server: {
     androidScheme: 'https'
+    //url: "http://192.168.1.36:8100",
+    //cleartext: true
   },
   plugins: {
   },

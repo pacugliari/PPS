@@ -1,52 +1,80 @@
-ion-header {
-    ion-toolbar {
-      --background: #eb445a; /* Color de fondo del encabezado */
-      color: white; /* Color del texto del encabezado */
-    }
+ion-card{
+  *{
+    color: white;
   }
-  
-  ion-content {
-    --ion-background-color: #19202e; /* Color de fondo del contenido */
-  
-    .login-container {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh; /* Ajusta la altura como desees */
-    }
-  
-    ion-item {
-      margin-bottom: 15px;
-    }
-  
-    ion-button {
-      --background: #eb445a; /* Color de fondo del botón */
-      --color: white; /* Color del texto del botón */
-      margin-top: 15px;
-    }
-  
-    .text-center {
-      text-align: center;
-    }
-
-    
-    ion-input {
-      --color: white; /* Color del texto */
-      --border-color: white; /* Color de la línea inferior */
-      --highlight-color-focused: white; /* Color de la línea inferior al enfocar */
-    }
-    
-    ion-item{
-      --highlight-color-focused: white; /* Color de la línea inferior al enfocar */
-      --border-color: white !important; /* Color de la línea inferior */
-    }
-
-    p{
-      color: white;
-    }
-    a{
-      color: orange;
-    }
+  ion-card-title{
+    margin-top: 20px;
   }
+  //position: fixed;
+  border-radius: 10%;
+  top: 5%;
+  
+  width: auto;
+  height: 17em;
+
+  //align-items: center;
+  background-color: rgba(31, 28, 28, 0.849);
+
+  .txtVerificacion{
+    font-size: 100%;
+    margin-left: 40%;
+  }
+}
+
+ion-content.background {
+  --background:  #19202e;
+
+
+}
+
+ion-grid{
+  ion-row{
+    //align-items: center;
+    margin-top: 50%;
+    margin-left: 25%;
+  }
+
+#btnStart, #btnStop{
+  //position: absolute;
+  
+  //margin-top: 60%;
+  //margin-left: 20%;
+  color: rgb(255, 255, 255);
+  border-radius: 10%;
+
+}
+
+
+#btnStart{
+  background-color: rgba(155, 7, 7, 0.733);
+  width: 13em;
+  height: 13em;
+
+
+}
+
+#btnStop{    
+  background-color: rgba(20, 128, 8, 0.733);  
+  width: 13em;
+  height: 13em;
+
+}
+.textInfo{
+  color: white;
+  font-size: 140%;
+}
+
+}
+.fullscreen-button {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid #eb445a;
+  border-radius: 5%;
+}
+
+ion-icon {
+  font-size: 24rem; /* Tamaño del ícono */
+}
+
