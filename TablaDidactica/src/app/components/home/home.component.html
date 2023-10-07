@@ -1,13 +1,64 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content >
 
-<ion-content scroll-y="false">
-  <div class="login-container" style="justify-content: center;">
 
-    <ion-button style="margin-top: 50%; width: 80%;" (click)="logout()" >Salir</ion-button>
+
+
+
+  <body style="background-color: #415E5C;" >
+    
+        <ion-grid >      
+          <ion-row >
+            <ion-col size="6" size-sm="6" size-md="4" size-lg="4" *ngFor="let unCuadro of manejadora.listaCuadros" >
+                <ion-button [ngStyle]="{ '--background': unCuadro.colorBoton }" expand="block"  (click)="Reproducir(unCuadro.pathSonido)">
+                  <ion-grid>
+                    <ion-row *ngIf="!(manejadora.tipoJuego===0 || manejadora.tipoJuego==='colores')">
+                      <ion-col>
+                        <ion-img src={{unCuadro.pathFoto}}></ion-img>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                    </ion-row>
+                  </ion-grid>
+                </ion-button>
+            </ion-col>
+    
+          </ion-row>
+        </ion-grid>
+    
+    
+  </body>
   
-  </div>
+
 </ion-content>
+
+
+<ion-fab horizontal="start" vertical="bottom" style="margin-bottom: -1%;">
+  <ion-fab-button  size="large" color="light">
+    <img [src]="manejadora.pathFotoIdioma">
+  </ion-fab-button>  
+  
+  <ion-fab-list side="top" >
+    <ion-fab-button (click)="CambiarIdioma('español')"><img src="assets/banderas/español.png"></ion-fab-button>
+    <ion-fab-button (click)="CambiarIdioma('ingles')"><img src="assets/banderas/ingles.png"></ion-fab-button>
+    <ion-fab-button (click)="CambiarIdioma('portugues')"><img src="assets/banderas/portugues.png"></ion-fab-button>      
+  </ion-fab-list>
+</ion-fab>
+
+
+<ion-fab horizontal="end" vertical="bottom" style="margin-bottom: -1%;">
+  <ion-fab-button  size="large" color="light">
+    <img [src]="manejadora.pathFotoJuego">
+  </ion-fab-button>  
+  <ion-fab-list side="top">
+    <ion-fab-button (click)="CambiarJuego('colores')" ><img src="assets/colores/circulo-de-color.png"></ion-fab-button>
+    <ion-fab-button (click)="CambiarJuego('numeros')" ><img src="assets/numeros/bloques-numericos.png"></ion-fab-button>
+    <ion-fab-button (click)="CambiarJuego('animales')" ><img src="assets/animales/mascotas.png"></ion-fab-button>      
+  </ion-fab-list>
+</ion-fab>
+
+<ion-toolbar class="tool" [ngStyle]="{ '--background': 'rgb(61, 161, 201)'}">
+    <ion-fab-button size="large" color="light"  (click)="salir()" style="margin: auto;margin-top: 0.3em;margin-bottom: 0.3em;"><ion-icon name="exit"></ion-icon></ion-fab-button>
+    
+</ion-toolbar>
+
+
