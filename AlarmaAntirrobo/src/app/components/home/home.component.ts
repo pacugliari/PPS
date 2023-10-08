@@ -31,6 +31,7 @@ export class HomeComponent  implements OnInit {
   accelerationX: any;
   accelerationY: any;
   accelerationZ: any;
+  pausar:boolean = false;
 
   constructor(
     private deviceMotion: DeviceMotion,
@@ -156,8 +157,12 @@ export class HomeComponent  implements OnInit {
         if ((this.posicionActualCelular!=this.posicionAnteriorCelular)) {
           this.audio.src = this.audioVertical;
           this.posicionAnteriorCelular = 'arriba';
+          this.pausar = false;
         }
-        this.audio.play();
+        
+        if(!this.pausar)
+          this.audio.play();
+
         this.movimientoVertical();
       }
 
@@ -177,8 +182,8 @@ export class HomeComponent  implements OnInit {
     this.primerIngresoFlash = true;
     if(this.posicionActualCelular!=this.posicionAnteriorCelular){
       this.audio.src = this.audioIzquierda;
+      this.audio.play();
     }
-    this.audio.play();
   }
 
   movimientoDerecha(){
@@ -186,8 +191,8 @@ export class HomeComponent  implements OnInit {
     this.primerIngresoFlash = true;
     if(this.posicionActualCelular!= this.posicionAnteriorCelular){
       this.audio.src = this.audioDerecha;
+      this.audio.play();
     }
-    this.audio.play();
   }
 
   movimientoVertical(){
@@ -196,6 +201,7 @@ export class HomeComponent  implements OnInit {
       setTimeout(() => {
         this.primerIngresoFlash = false;
         this.flashlight.switchOff();
+        this.pausar = true;
       }, 5000);
       this.primerIngreso = false;
     }
@@ -207,9 +213,9 @@ export class HomeComponent  implements OnInit {
 
     if(this.posicionActualCelular!=this.posicionAnteriorCelular){
       this.audio.src = this.audioHorizontal;
+      this.audio.play()
       this.vibration.vibrate(5000);
     }
-    this.audio.play()
   }
 
 

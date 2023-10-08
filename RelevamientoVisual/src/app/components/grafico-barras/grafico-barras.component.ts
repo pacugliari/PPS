@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js/auto';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PhotoService } from 'src/app/services/photo.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';  
 
@@ -15,6 +16,7 @@ export class GraficoBarrasComponent {
   chart :any;
   labels : string[] = [];
   data : number[] = [];
+  mostrarGif: boolean = false;
 
   colores: string[] = [
     '#ffc409',   // Color base
@@ -29,16 +31,11 @@ export class GraficoBarrasComponent {
     '#fff580',
   ];
 
-  constructor(private photoService:PhotoService) {
+  constructor(private photoService:PhotoService,private spinner: NgxSpinnerService) {
 
   }
-  
 
-  ngAfterViewInit() {
-    let respuesta = this.photoService.ObtenerVotos(false);
-    this.labels = respuesta.labels;
-    this.data = respuesta.data;
-
+  logica(){
     // Gráfico de barras (votos de cosas feas)
     const ctxBarras = this.canvas?.nativeElement.getContext('2d');
     this.chart = new Chart(ctxBarras, {
@@ -61,6 +58,20 @@ export class GraficoBarrasComponent {
         },
       },
     });
+  }
+  
+
+  ngAfterViewInit() {
+    let respuesta = this.photoService.ObtenerVotos(false);
+    this.labels = respuesta.labels;
+    this.data = respuesta.data;
+    this.mostrarGif = true;
+    setTimeout(()=>{
+      this.mostrarGif = false;
+      this.logica();
+    },1000);
+
+    
   }
 
 }

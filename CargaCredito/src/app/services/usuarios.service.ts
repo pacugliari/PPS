@@ -18,6 +18,7 @@ export class UsuariosService {
     const querySnapshot = await getDocs(collection(this.firestore, "usuarios"));
     querySnapshot.forEach((doc) => {
       let usuario = doc.data() as Usuario;
+      usuario.id = doc.id;
       this.listaUsuarios.push(usuario)
     });
   }

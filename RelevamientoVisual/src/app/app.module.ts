@@ -24,7 +24,7 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { GraficoBarrasComponent } from './components/grafico-barras/grafico-barras.component';
 import { GraficoTortaComponent } from './components/grafico-torta/grafico-torta.component';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -52,6 +52,7 @@ import { GraficoTortaComponent } from './components/grafico-torta/grafico-torta.
     MatIconModule,
     ReactiveFormsModule,
     SweetAlert2Module,
+    NgxSpinnerModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore(getApp())),
   ],

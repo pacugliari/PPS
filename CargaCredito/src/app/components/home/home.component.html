@@ -1,13 +1,57 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
+  <ion-toolbar color="success">
+    <h1 style="justify-content: center;text-align: center;padding-top: 4%;">Carga credito QR</h1>
+    <ion-buttons slot="end"(click)="Logout()">
+      <ion-icon style="font-size: 300%;" name="exit"> </ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content scroll-y="false">
-  <div class="login-container" style="justify-content: center;">
+<ion-content [fullscreen]="true" padding color="dark">
 
-    <ion-button style="margin-top: 50%; width: 80%;" (click)="logout()" >Salir</ion-button>
+  <ion-card>
+    <ion-card-header>
+      <h6 class="credito">Crédito disponible:</h6>
+
+      <div id="credito" *ngIf="esconder">
+        <h1 class="credito" *ngIf="carga">${{carga.monto}} <!--<ion-icon name="eye" (click)="esconderCreditos()">
+          </ion-icon>-->
+        </h1>
+      </div>
+
+      <ion-button color='warning' (click)="eliminarCreditos()">Limpiar creditos</ion-button>
+      <ion-button color='primary' (click)="verHistorial()">Ver historial recargas</ion-button>
+
+      <div id="credito" *ngIf="esconder===false">
+        <h1 class="credito">$****<ion-icon name="eye-off" (click)="esconderCreditos()"></ion-icon>
+        </h1>
+      </div>
+      <br>
+    </ion-card-header>
+  </ion-card>
+
+  <img *ngIf="mostrarGif" src="../../../assets/cargando.gif" alt="" style="padding-top: 30%;">
+
+
+
+  <ion-card *ngIf="!mostrarGif && verHist">
+    <h2 style="padding-left: 3%;">Historial de recargas:</h2>
+    <ul>
+      <li *ngFor="let item of cargasDelUsuario"><h5 style="font-size:15px;">Monto carga:{{item.monto}} ({{item.fecha | dateFormat}})</h5></li>
+    </ul>
+  </ion-card>
+
   
-  </div>
 </ion-content>
+
+
+<ion-toolbar color="success" >
+  <ion-buttons  (click)="scanBRcode()" style="margin-left: 45%;">
+    <ion-icon style="font-size: 300%;" name="camera"></ion-icon>
+  </ion-buttons>
+
+
+
+
+</ion-toolbar>
+

@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js/auto';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PhotoService } from 'src/app/services/photo.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class GraficoTortaComponent {
   chart :any;
   labels : string[] = [];
   data : number[] = [];
+  mostrarGif: boolean = false;
 
   colores: string[] = [
     '#ffc409',   // Color base
@@ -28,14 +30,10 @@ export class GraficoTortaComponent {
     '#fff580',
   ];
 
-  constructor(private photoService:PhotoService) {
+  constructor(private photoService:PhotoService,private spinner: NgxSpinnerService) {
   }
 
-  ngAfterViewInit() {
-    let respuesta = this.photoService.ObtenerVotos(true);
-    this.labels = respuesta.labels;
-    this.data = respuesta.data;
-
+  logica(){
     // Gráfico de torta (cosas lindas)
     const ctxTorta = this.canvas?.nativeElement.getContext('2d');
     this.chart = new Chart(ctxTorta, {
@@ -51,6 +49,19 @@ export class GraficoTortaComponent {
         ],
       }
     });
+  }
+
+  ngAfterViewInit() {
+    let respuesta = this.photoService.ObtenerVotos(true);
+    this.labels = respuesta.labels;
+    this.data = respuesta.data;
+    this.mostrarGif = true;
+    setTimeout(()=>{
+      this.mostrarGif = false;
+      this.logica();
+    },1000);
+
+    
   }
 
 }

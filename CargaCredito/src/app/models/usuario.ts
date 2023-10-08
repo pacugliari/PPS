@@ -1,5 +1,5 @@
 export class Usuario {
-    id?: number;
+    id?: string;
     correo?: string;
     clave: number | null = null;
     perfil?: string;
