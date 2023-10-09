@@ -19,7 +19,7 @@
 
 <ion-content [fullscreen]="true">
   <div class="chat-messages" *ngIf="!mostrarGif">
-    <div *ngFor="let mensaje of chatService.mensajes" class="message" [ngClass]="{'sender': mensaje.perfil === usuarioActual, 'receiver': mensaje.perfil !== usuarioActual}">
+    <div *ngFor="let mensaje of chatService.mensajes" class="message" [ngClass]="{'senderUno': mensaje.perfil === usuarioActual && aulaSeleccionada==='mensajes4a', 'receiver': mensaje.perfil !== usuarioActual, 'senderDos': mensaje.perfil === usuarioActual && aulaSeleccionada!=='mensajes4a'}">
       <strong>{{ mensaje.perfil === usuarioActual ? 'Tú' : mensaje.perfil}}:</strong>
       <p>{{ mensaje.mensaje }}</p>
       <span class="time">{{ mensaje.fecha | dateFormat }}</span>

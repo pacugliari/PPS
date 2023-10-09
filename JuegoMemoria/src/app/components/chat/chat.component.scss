@@ -118,8 +118,16 @@ body {
     word-wrap: break-word; /* Permite que los mensajes largos se colapsen hacia abajo */
 }
 
-.sender {
+.senderUno {
     background-color: #7faaf5; /* Verde claro de WhatsApp */
+    color: #000;
+    text-align: right;
+    align-self: flex-end;
+    margin-left: auto; /* Empuja los mensajes de los remitentes a la derecha */
+}
+
+.senderDos {
+    background-color: #ee697a; /* Verde claro de WhatsApp */
     color: #000;
     text-align: right;
     align-self: flex-end;
