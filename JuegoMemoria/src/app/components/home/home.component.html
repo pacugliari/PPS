@@ -1,13 +1,21 @@
+<link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:100italic' rel='stylesheet' type='text/css'>
+
+
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
+  <ion-toolbar color="dark">
+    <h1 style="justify-content: center;text-align: center;padding-top: 4%;">Conversando en el aula</h1>
+    <ion-buttons slot="end"(click)="Logout()">
+      <ion-icon style="font-size: 300%;" name="exit"> </ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content scroll-y="false">
-  <div class="login-container" style="justify-content: center;">
-
-    <ion-button style="margin-top: 50%; width: 80%;" (click)="logout()" >Salir</ion-button>
-  
-  </div>
+<ion-content color="medium">
+  <ion-card class="boton aulaA" (click)="elegirAula('mensajes4a')" style="padding-top: 15%;">
+    <p class="texto" >PPS-4A</p>
+  </ion-card>
+  <ion-card class="boton aulaB" (click)="elegirAula('mensajes4b')" style="padding-top: 15%;">
+    <p class="texto">PPS-4B</p>
+  </ion-card>
 </ion-content>

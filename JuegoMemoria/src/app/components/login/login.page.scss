@@ -35,8 +35,12 @@ animation: shakeX 1s;
 
 
 ion-content.background {
-  --background: url('../../../assets/fondo.png')  center center fixed repeat;
-  background-size: contain;
+
+  --background: linear-gradient(to bottom, #3880ff, #eb445a);
+  --height: 100vh; /* Asegura que el fondo ocupe toda la altura de la ventana */
+  --margin: 0;
+  --padding: 0;
+
 }
 
 

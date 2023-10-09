@@ -1,31 +1,31 @@
-<ion-header style="background-color: greenyellow">
+<ion-header style="background-color: rgb(192, 190, 190)">
 
-    <h1 style="text-align: center;  margin-top: 10px;font-size: 250%;text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff">JUEGO DE MEMORIA</h1>
+    <h1 style="text-align: center;  margin-top: 10px;font-size: 170%;text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff">CONVERSANDO EN EL AULA</h1>
 
 </ion-header>
 
 <ion-content [fullscreen]="true" padding class="background" >
-
+  <img  src="../../../assets/fondo.png" alt="" style="padding-top: 85%;">
 
   <div id="container" >
     <form novalidate (ngSubmit)="onLogin()" [formGroup]="userForm">
-      <div style="background-color: greenyellow;width: 90%;margin-left: 5%;border-radius: 5%;margin-top: 70%;">
+      <div style="background-color: rgb(192, 190, 190);width: 90%;margin-left: 5%;border-radius: 5%;margin-top: -40%;">
         <br>
-        <ion-item style="width: 80%;margin-left: 10%;margin-top: 5%;">
-          <ion-label position="fixed" >E-mail</ion-label>
+        <ion-item style="width: 80%;margin-left: 10%;margin-top: 5%;" *ngIf="!this.mostrar">
+          <ion-label position="fixed" >Correo</ion-label>
           <ion-input class="closed" type="email" formControlName="email" [class]="isValidField('email')"></ion-input> 
     
         </ion-item>
 
     
-        <ion-item style="width: 80%;margin-left: 10%;margin-top: 5%;">
+        <ion-item style="width: 80%;margin-left: 10%;margin-top: 5%;" *ngIf="!this.mostrar">
           <ion-label position="fixed">Clave</ion-label>
          <ion-input type="password" formControlName="password"[class]="isValidField('password')" ></ion-input> 
         </ion-item>
 
-        <ion-button style="width: 80%;margin-left: 10%;margin-top: 5%;" color="success"  expand="block" (click)=onLogin() class=" btnLogin animate__animated  animate__backInLeft ">Iniciar Sesión</ion-button>
+        <ion-button *ngIf="!this.mostrar" style="width: 80%;margin-left: 10%;margin-top: 5%;" color="medium"  expand="block" (click)=onLogin() class=" btnLogin animate__animated  animate__backInLeft ">Iniciar Sesión</ion-button>
     
-        <ion-button style="width: 80%;margin-left: 10%;margin-top: 5%;margin-bottom: 5%;" color="success"  expand="block" (click)="mostrarBotones()" class=" btnLogin animate__animated  animate__backInLeft ">Inicio rapido</ion-button>
+        <ion-button  *ngIf="!this.mostrar" style="width: 80%;margin-left: 10%;margin-top: 5%;margin-bottom: 5%;" color="medium"  expand="block" (click)="mostrarBotones()" class=" btnLogin animate__animated  animate__backInLeft ">Inicio rapido</ion-button>
 
         <div *ngIf="this.mostrar">
           <ion-button style="width: 80%;margin-left: 10%;" color="dark"  expand="block" (click)="selecCuenta('admin@admin.com')" class=" btnLogin animate__animated  animate__backInLeft ">Admin</ion-button>

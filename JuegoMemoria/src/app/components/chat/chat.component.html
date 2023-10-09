@@ -1,0 +1,54 @@
+
+<ion-header  *ngIf="aulaSeleccionada==='mensajes4a'">
+  <ion-toolbar color="primary" >
+    <ion-buttons slot="start">
+      <ion-icon style="font-size: 300%;" d="iconBack" name="arrow-back" (click)="cambiarChat()"> </ion-icon>
+    </ion-buttons>
+    <h1 style="justify-content: center;text-align: center;padding-top: 4%;">PPS-4A</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header  *ngIf="aulaSeleccionada==='mensajes4b'">
+  <ion-toolbar color="danger" >
+    <ion-buttons slot="start">
+      <ion-icon style="font-size: 300%;" d="iconBack" name="arrow-back" (click)="cambiarChat()" > </ion-icon>
+    </ion-buttons>
+    <h1 style="justify-content: center;text-align: center;padding-top: 4%;">PPS-4B</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="chat-messages" *ngIf="!mostrarGif">
+    <div *ngFor="let mensaje of chatService.mensajes" class="message" [ngClass]="{'sender': mensaje.perfil === usuarioActual, 'receiver': mensaje.perfil !== usuarioActual}">
+      <strong>{{ mensaje.perfil === usuarioActual ? 'Tú' : mensaje.perfil}}:</strong>
+      <p>{{ mensaje.mensaje }}</p>
+      <span class="time">{{ mensaje.fecha | dateFormat }}</span>
+    </div>
+  </div>
+  <img *ngIf="mostrarGif" src="../../../assets/cargando.gif" alt="" style="padding-top: 50%;">
+
+</ion-content  >
+
+
+<ion-footer color="primary" *ngIf="aulaSeleccionada==='mensajes4a'">
+  <ion-toolbar color="primary" >
+    <ion-buttons slot="start" style="width: 200%;">
+      <ion-input class="input-chat" placeholder="Escribe un mensaje aqui" (keyup)="onKey($event)" [(ngModel)]="this.mensaje.mensaje"></ion-input>
+    </ion-buttons>
+    <ion-buttons slot="end" style="padding-right: 5%;">
+      <ion-icon type="submit" (click)="EnviarMensaje()" name="send" id="sendButton"></ion-icon>
+    </ion-buttons>  
+  </ion-toolbar>
+</ion-footer>
+
+<ion-footer color="danger" *ngIf="aulaSeleccionada==='mensajes4b'">
+  <ion-toolbar color="danger" >
+    <ion-buttons slot="start" style="width: 200%;">
+      <ion-input class="input-chat" placeholder="Escribe un mensaje aqui" (keyup)="onKey($event)" [(ngModel)]="this.mensaje.mensaje"></ion-input>
+    </ion-buttons>
+    <ion-buttons slot="end" style="padding-right: 5%;">
+      <ion-icon type="submit" (click)="EnviarMensaje()" name="send" id="sendButton"></ion-icon>
+    </ion-buttons>  
+  </ion-toolbar>
+</ion-footer>
+

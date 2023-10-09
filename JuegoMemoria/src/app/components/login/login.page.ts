@@ -37,19 +37,7 @@ export class LoginPage implements OnInit {
   
  mostrarBotones()
  {
-  /* if(this.mostrar == true)
-   {
-     this.mostrar = false
-   }
-   else
-   {
-     this.mostrar = true
-   }
-console.log(this.mostrar)
-   return this.mostrar;*/
    this.mostrar = !this.mostrar;
-
-
  }
 
   onLogin() {
@@ -94,6 +82,7 @@ console.log(this.mostrar)
         break;
       }
     }
+    this.mostrarBotones();
   }
 
   isValidField(field: string): string {

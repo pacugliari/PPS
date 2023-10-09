@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,16 +8,21 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent  implements OnInit {
 
-  constructor(private router:Router) { }
+  @Input() error: string = "";
 
-  ngOnInit() {
-    if(localStorage.getItem("user") === null){
-      this.logout();
-    }
+  constructor(
+    private router: Router,
+  ) {}
+
+  ngOnInit(): void {
   }
 
-  async logout(){
-    localStorage.removeItem("user");
-    this.router.navigate(['login'], { replaceUrl: true });
+  Logout(){
+    this.router.navigate(["/"]);
+  }
+
+  elegirAula(aula:any) {
+    localStorage.setItem("aula",aula)
+    this.router.navigate(["chat"]);
   }
 }
