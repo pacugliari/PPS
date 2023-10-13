@@ -16,6 +16,7 @@ export class GaleriaPage implements OnInit {
   imagenesRT?: any[];
   title?:string;
   flag = false;
+  user?:Usuario;
 
   constructor(private router: Router, public photoService: PhotoService, public usuarioSrv: UsuariosService) {
     if (this.router.url === '/cosasLindas') {
@@ -25,36 +26,32 @@ export class GaleriaPage implements OnInit {
       this.title = 'Cosas FEAS del edificio';
       this.verFotosLindas = false
     }
-    /*this.photoService.ObtenerTodos().then((resultado) => {
-      this.imagenesRT = resultado.reverse();
-      console.log(this.imagenesRT)
-    });*/
   }
 
   ngOnInit() {
-    /*setTimeout(() => {
-      this.imagenesRT?.reverse()
-    }, 1550);*/
     this.photoService.listenToChatChanges();
+
+    let usuario = localStorage.getItem('user');
+    if(usuario)
+      this.user = <Usuario>JSON.parse(usuario)
 
   }
 
+  tieneLikeDelUsuario(unaFoto:any){
+    let retorno = false;
+    unaFoto.like.forEach((element:string) => {
+      if(element === this.user?.correo){
+        retorno =  true;
+      }
+    });
+    return retorno;
+  }
 
 
-  /*doRefresh(event:any) {
-    setTimeout(() => {
-        this.imagenesRT?.splice(0, this.imagenesRT?.length)
-        this.photoService.ObtenerTodos().then((resultado) => {
-          this.imagenesRT = resultado.reverse();
-        });
-        event.target.complete();
-      }, 1000);
-  }*/
 
    addPhotoToGallery() {
     this.photoService.sacarFoto().then((val) => {
       this.flag = true
-      //this.doRefresh(true);
     });
   }
 

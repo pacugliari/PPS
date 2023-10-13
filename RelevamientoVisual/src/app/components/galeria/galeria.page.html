@@ -22,11 +22,17 @@
             <ion-card-subtitle>Usuario: {{photo.usuario}}</ion-card-subtitle>
           </ion-card-header>
             <ion-img [src]="photo.referencia" class="img"></ion-img>
-          <div class="row">
+          <div class="row" *ngIf="!tieneLikeDelUsuario(photo)">
             <ion-card-content style="font-size: large;font-weight: bolder;margin-left: 5%;width: 50%;">
               Votos:{{photo.votos}}
             </ion-card-content>
-            <ion-icon name="thumbs-up" size="large" style="margin-left: 30%;margin-top: 2%;" (click)="setLike(photo)"></ion-icon>
+            <ion-icon name="thumbs-up"  size="large" style="margin-left: 30%;margin-top: 2%;" (click)="setLike(photo)"></ion-icon>
+          </div>
+          <div class="row" *ngIf="tieneLikeDelUsuario(photo)">
+            <ion-card-content style="font-size: large;font-weight: bolder;margin-left: 5%;width: 50%;color: #3880ff">
+              Votos:{{photo.votos}}
+            </ion-card-content>
+            <ion-icon name="thumbs-up" color="primary" size="large" style="margin-left: 30%;margin-top: 2%;" (click)="setLike(photo)"></ion-icon>
           </div>
         </ion-card>
       </div>
@@ -37,11 +43,17 @@
             <ion-card-subtitle>Usuario: {{photo.usuario}}</ion-card-subtitle>
           </ion-card-header>
           <ion-img [src]="photo.referencia"></ion-img>
-          <div class="row">
+          <div class="row" *ngIf="!tieneLikeDelUsuario(photo)">
             <ion-card-content style="font-size: large;font-weight: bolder;margin-left: 5%;width: 50%;">
               Votos:{{photo.votos}}
             </ion-card-content>
             <ion-icon name="thumbs-up" size="large" style="margin-left: 30%;margin-top: 2%;" (click)="setLike(photo)"></ion-icon>
+          </div>
+          <div class="row" *ngIf="tieneLikeDelUsuario(photo)">
+            <ion-card-content style="font-size: large;font-weight: bolder;margin-left: 5%;width: 50%;color: #3880ff">
+              Votos:{{photo.votos}}
+            </ion-card-content>
+            <ion-icon name="thumbs-up" color="primary" size="large" style="margin-left: 30%;margin-top: 2%;" (click)="setLike(photo)"></ion-icon>
           </div>
         </ion-card>
       </div>
