@@ -1,0 +1,56 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+ion-button{
+  width: 100%;
+  height: 31.33333333vh;
+  border: 2px solid black;
+}
+
+ion-img{
+  width: 100%;
+  height: 18.03333333vh;
+}
+
+.tool{
+  --min-height:20%!important;
+
+  }
+
+  ion-fab-button {
+    margin: 5px 0 ; /* Margen horizontal de 5px */
+    width: 60px; /* Ancho personalizado */
+    height: 60px; /* Altura personalizada */
+    font-size: 24px; /* Tamaño de fuente personalizado */
+  }
+
+  ion-fab-button img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain; /* Esto mantendrá la proporción de la imagen y la ajustará dentro del botón */
+  }
+
+
+/* Estilos para orientación vertical (portrait) */
+@media (orientation: portrait) {
+  /* Agrega estilos específicos para la orientación vertical aquí */
+  ion-button{
+    height: 17em;
+  }
+}
+
+/* Estilos para orientación horizontal (landscape) */
+@media (orientation: landscape) {
+  /* Agrega estilos específicos para la orientación horizontal aquí */
+  ion-button{
+    height: 10em;
+  }
+}
+  
+
+  

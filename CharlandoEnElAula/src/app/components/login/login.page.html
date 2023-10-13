@@ -1,58 +1,50 @@
+<ion-header style="background-color: rgb(192, 190, 190)">
 
-<ion-header style="background-color: skyblue">
-  <h1 style="text-align: center;  margin-top: 10px;">TABLA DIDACTICA</h1>
+    <h1 style="text-align: center;  margin-top: 10px;font-size: 170%;text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff">CONVERSANDO EN EL AULA</h1>
+
 </ion-header>
 
-
 <ion-content [fullscreen]="true" padding class="background" >
-
+  <img  src="../../../assets/fondo.png" alt="" style="padding-top: 85%;">
 
   <div id="container" >
-
-
     <form novalidate (ngSubmit)="onLogin()" [formGroup]="userForm">
+      <div style="background-color: rgb(192, 190, 190);width: 90%;margin-left: 5%;border-radius: 5%;margin-top: -40%;">
+        <br>
+        <ion-item style="width: 80%;margin-left: 10%;margin-top: 5%;" *ngIf="!this.mostrar">
+          <ion-label position="fixed" >Correo</ion-label>
+          <ion-input class="closed" type="email" formControlName="email" [class]="isValidField('email')"></ion-input> 
+    
+        </ion-item>
 
-        <div style="width: 80%;margin-left: 10%;">
-          <input style="margin-top: 5%;margin-bottom: 5%; background-color: skyblue;border-color: black;border-width: 2px;"
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="Correo Electronico"
-              formControlName="email"
-              [class]="isValidField('email')"
-            />
+    
+        <ion-item style="width: 80%;margin-left: 10%;margin-top: 5%;" *ngIf="!this.mostrar">
+          <ion-label position="fixed">Clave</ion-label>
+         <ion-input type="password" formControlName="password"[class]="isValidField('password')" ></ion-input> 
+        </ion-item>
 
-        <input style="margin-bottom: 5%; background-color: skyblue;border-color: black;border-width: 2px;"
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="Contraseña"
-              formControlName="password"
-              [class]="isValidField('password')"
-            />
-        </div>
+        <ion-button *ngIf="!this.mostrar" style="width: 80%;margin-left: 10%;margin-top: 5%;" color="medium"  expand="block" (click)=onLogin() class=" btnLogin animate__animated  animate__backInLeft ">Iniciar Sesión</ion-button>
+    
+        <ion-button  *ngIf="!this.mostrar" style="width: 80%;margin-left: 10%;margin-top: 5%;margin-bottom: 5%;" color="medium"  expand="block" (click)="mostrarBotones()" class=" btnLogin animate__animated  animate__backInLeft ">Inicio rapido</ion-button>
+
+        <div *ngIf="this.mostrar">
+          <ion-button style="width: 80%;margin-left: 10%;" color="dark"  expand="block" (click)="selecCuenta('admin@admin.com')" class=" btnLogin animate__animated  animate__backInLeft ">Admin</ion-button>
+          <ion-button style="width: 80%;margin-left: 10%;" color="dark"  expand="block" (click)="selecCuenta('invitado@invitado.com')"  class=" btnLogin animate__animated  animate__backInLeft ">Invitado</ion-button>
+          <ion-button style="width: 80%;margin-left: 10%;" color="dark"  expand="block" (click)="selecCuenta('usuario@usuario.com')"  class=" btnLogin animate__animated  animate__backInLeft ">Usuario</ion-button>
+          <ion-button style="width: 80%;margin-left: 10%;" color="dark"  expand="block" (click)="selecCuenta('anonimo@anonimo.com')"  class=" btnLogin animate__animated  animate__backInLeft ">Anonimo</ion-button>
+          <ion-button style="width: 80%;margin-left: 10%;" color="dark"  expand="block" (click)="selecCuenta('tester@tester.com')"  class=" btnLogin animate__animated  animate__backInLeft ">Tester</ion-button>
+      </div> 
+        <br>
+      </div>
     </form>
 
     <div id="errorLogin">
       <h6 id="msjError"></h6>
     </div>
 
-    <br>
 
-    <ion-button color="green"  style="background-color: skyblue;margin-bottom: 5%;" (click)=onLogin() class=" btnLogin animate__animated  animate__backInLeft ">Iniciar Sesión</ion-button>
-   
-
-    <br>
   </div>
 </ion-content>
-
-  <ion-select style="background-color: skyblue;padding-left: 5%;" interface="popover"  #C  placeholder="ACCESO RAPIDO" (ionChange)="selecCuenta(C.value)" ><!---->
-      <ion-select-option [value]="">admin@admin.com</ion-select-option>
-      <ion-select-option [value]="">invitado@invitado.com</ion-select-option>
-      <ion-select-option [value]="">usuario@usuario.com</ion-select-option>
-      <ion-select-option [value]="">anonimo@anonimo.com</ion-select-option>
-      <ion-select-option [value]="">tester@tester.com</ion-select-option>
-  </ion-select>
 
 
 <head>

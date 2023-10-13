@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 import { LoginPage } from './components/login/login.page';
 import { SplashAnimadoPage } from './components/splash-animado/splash-animado.page';
-import { HomeComponent } from './components/home/home.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path: 'home',component:HomeComponent
+  },
+  {
+    path: 'chat',component:ChatComponent
   },
 ];
 

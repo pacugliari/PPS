@@ -1,56 +1,30 @@
 
-
-*{
-  margin: 0;
-  padding: 0;
+.texto{
+  color: #FFF;
+  margin-top: 35%;
+  text-align: center;
+  font-weight: 700;
+  font-size: xxx-large;
 }
 
+.aulaA{
+  background: #3880ff
+  //linear-gradient(0deg,#0059ffb3, rgba(0,0,0,0.1)),
+  //url("../../assets/fondo2.jpg") no-repeat center center / cover;
+}   
 
-ion-button{
+.aulaB{
+  background: #eb445a
+  //linear-gradient(0deg,#62d8bbb3, rgba(0,0,0,0.1)),
+  //url("../../assets/fondo3.jpg") no-repeat center center / cover;
+
+}
+
+.boton{
   width: 100%;
-  height: 31.33333333vh;
-  border: 2px solid black;
+  height: 50%;
+  margin: inherit;
+  border: 4px solid #000;
+  border-radius: 5%;
+
 }
-
-ion-img{
-  width: 100%;
-  height: 18.03333333vh;
-}
-
-.tool{
-  --min-height:20%!important;
-
-  }
-
-  ion-fab-button {
-    margin: 5px 0 ; /* Margen horizontal de 5px */
-    width: 60px; /* Ancho personalizado */
-    height: 60px; /* Altura personalizada */
-    font-size: 24px; /* Tamaño de fuente personalizado */
-  }
-
-  ion-fab-button img {
-    width: 80%;
-    height: 80%;
-    object-fit: contain; /* Esto mantendrá la proporción de la imagen y la ajustará dentro del botón */
-  }
-
-
-/* Estilos para orientación vertical (portrait) */
-@media (orientation: portrait) {
-  /* Agrega estilos específicos para la orientación vertical aquí */
-  ion-button{
-    height: 17em;
-  }
-}
-
-/* Estilos para orientación horizontal (landscape) */
-@media (orientation: landscape) {
-  /* Agrega estilos específicos para la orientación horizontal aquí */
-  ion-button{
-    height: 10em;
-  }
-}
-  
-
-  

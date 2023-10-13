@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter4',
-  appName: 'Conversando en el aula',
+  appId: 'io.ionic.starter2',
+  appName: 'Tabla Didactica',
   webDir: 'www',
   server: {
     androidScheme: 'https'

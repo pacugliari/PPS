@@ -15,6 +15,7 @@ export class LoginPage implements OnInit {
   public userValid: boolean = true;
   notfound: number = 0;
   private isEmail = /\S+@\S+\.\S+/;
+  mostrar:boolean = false;
 
   userForm = this.fb.group({
     email: ['', [Validators.required, Validators.pattern(this.isEmail)]],
@@ -32,6 +33,12 @@ export class LoginPage implements OnInit {
   async ngOnInit() {
     await this.usuarioSrv.traerUsuariosBase();
   }
+
+  
+ mostrarBotones()
+ {
+   this.mostrar = !this.mostrar;
+ }
 
   onLogin() {
     this.unUsuario.correo=this.userForm.value.email ? this.userForm.value.email : "";
@@ -75,6 +82,7 @@ export class LoginPage implements OnInit {
         break;
       }
     }
+    this.mostrarBotones();
   }
 
   isValidField(field: string): string {

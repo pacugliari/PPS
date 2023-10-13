@@ -17,17 +17,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore} from '@angular/fire/firestore';
+import { HomeComponent } from './components/home/home.component';
 import { SplashAnimadoPage } from './components/splash-animado/splash-animado.page';
 import { LoginPage } from './components/login/login.page';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import { HomeComponent } from './components/home/home.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { DateFormatPipe } from './pipes/date-format.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SplashAnimadoPage,
-    LoginPage
+    LoginPage,
+    ChatComponent,
+    DateFormatPipe
   ],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 

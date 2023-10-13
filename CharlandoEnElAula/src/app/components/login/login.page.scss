@@ -4,9 +4,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-67%);
-  background-color: rgba(252, 252, 252, 0.555);
+  top: 41%;
+  transform: translateY(-50%);
 }
 
 #container strong {
@@ -19,8 +18,10 @@
   line-height: 22px;
 
   color: #8c8c8c;
- 
+
+  margin: 0;
 }
+
 #container a {
   text-decoration: none;
 }
@@ -32,155 +33,34 @@ animation: shakeX 1s;
 
 }
 
+
 ion-content.background {
-  --background: url('../../../assets/fondo.jpg')  center center fixed no-repeat;
-  background-size: contain;
+
+  --background: linear-gradient(to bottom, #3880ff, #eb445a);
+  --height: 100vh; /* Asegura que el fondo ocupe toda la altura de la ventana */
+  --margin: 0;
+  --padding: 0;
 
 }
+
 
 .titulo
 {
-  font-size: 40px;
-font-family:'Learning';
-animation:  'animate__tada' fill-mode;
-color: #000000;
+  font-size:xx-large;
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+color:#000000;
 
 }
-
 
 .btnLogin
 {
-  color: black;
+  color: rgb(0, 0, 0);
 
 }
 
-:host {
-  ion-item {
-      --border-color:#3DD67A; // default underline color
-      --highlight-color-invalid: red; // invalid underline color
-      --highlight-color-valid:#3DD67A; // valid underline color
-      --color-activated: #3DD67A;
-      background-color: rgb(87, 195, 238);
-  }
-
+.closed {
+  color:rgb(0, 0, 0);
+  
+  --highlight-background: transparent;
 }
-
-
-.labelInput{
-
-  color: black!important;
-}
-
-/*.tituloLogin {
-  overflow: hidden;
-}
-
-ion-header {
-  color: white;
-}
-
-.login {
-  width: 20rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-.card{
-    background-color: skyblue;
-    border-radius: 15px;
-    border: none;
-    color: black;
-}
-.ion-header{
-    border: none;
-}
-
-
-#msjError {
-  display: none;
-}
-#drop1{
-  border-radius: 20px;
-}
-.msjError{
-    text-align: center;
-    background-color: #ffffff00;
-    color: orange;
-    width: 15rem;
-
-    font-size: large;
-}
-
-.aligncenter {
-  text-align: center;
-}
-
-
-.background {
-  --background: url("../../../assets/fondo.jpg")center center fixed no-repeat;
-  background-size: contain;
-  @media only screen and (max-height: 800px) {
-      --background: url("../../../assets/fondo.jpg")center center fixed no-repeat;
-  background-size: contain;
-    }
-}
-
-
-.button-with-border {
-  border: 2px solid white; 
-  background-color: transparent; 
-  color: white; 
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 5px; 
-}
-
-.button-with-border:hover {
-  background-color: #ff5733; 
-  color: white; 
-}
-
-.button {
-  background-color: #c47135;
-  border: none;
-  color: #ffffff;
-  outline: none;
-  padding: 12px 40px 10px;
-  position: relative;
-}
-.button:before,
-.button:after {
-  border: 0 solid transparent;
-  transition: all 0.25s;
-  content: '';
-  height: 24px;
-  position: absolute;
-  width: 24px;
-}
-.button:before {
-  border-top: 2px solid #c47135;
-  left: 0px;
-  top: -5px;
-}
-.button:after {
-  border-bottom: 2px solid #c47135;
-  bottom: -5px;
-  right: 0px;
-}
-.button:hover {
-  background-color: #c47135;
-}
-.button:hover:before,
-.button:hover:after {
-  height: 100%;
-  width: 100%;
-}
-
-*/
